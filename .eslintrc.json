@@ -1,0 +1,76 @@
+{
+    "env": {
+        "es2020": true,
+        "node": true
+    },
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "tsconfig.json"
+    },
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "plugin:import/recommended",
+      "plugin:import/typescript"
+    ],
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    },
+    "rules": {
+        "prettier/prettier": ["error", {
+          "singleQuote": true,
+          "trailingComma": "all"
+        }],
+        "curly": "error",
+        "eqeqeq": "error",
+        "no-underscore-dangle": "off",
+        "no-param-reassign": "error",
+        "import/no-cycle": "error",
+        "import/order": [
+          "error",
+          {
+            "alphabetize": { "order": "asc" },
+            "groups": [
+              ["builtin", "external"],
+              "internal",
+              "parent",
+              "sibling"
+            ],
+            "newlines-between": "always"
+          }
+        ],
+        "import/prefer-default-export": "off",
+        "sort-imports": [
+          "error",
+          {
+            "ignoreCase": true,
+            "ignoreDeclarationSort": true
+          }
+        ],
+        "@typescript-eslint/lines-between-class-members": ["error", { "exceptAfterSingleLine": "true" }],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": ["camelCase", "UPPER_CASE"]
+          },
+          {
+            "selector": ["function", "parameter"],
+            "format": ["camelCase"]
+          },
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"]
+          }
+        ],
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/no-unused-expressions": "error",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-use-before-define": "off"
+      }
+}
